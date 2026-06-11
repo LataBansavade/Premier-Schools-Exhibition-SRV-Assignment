@@ -740,6 +740,15 @@ button { font: inherit; cursor: pointer; }
   border-color: var(--c-white);
   transform: scale(1.06);
 }
+.carousel__arrow--round:disabled,
+.carousel__arrow--round[disabled] {
+  opacity: .35;
+  cursor: not-allowed;
+  background: transparent;
+  color: var(--c-white);
+  border-color: rgba(255,255,255,.4);
+  transform: none;
+}
 .carousel__arrow-svg { display: block; }
 .carousel__arrow-svg--prev { transform: rotate(180deg); }
 
