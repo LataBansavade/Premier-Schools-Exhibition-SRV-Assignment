@@ -13,6 +13,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
 
   <link rel="icon" href="assets/logo%201.png" type="image/png">
+
+  <!-- Preload first-visible hero images so they paint immediately (no late pop-in) -->
+  <link rel="preload" as="image" href="assets/hero-1.png" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero-3.png">
+  <link rel="preload" as="image" href="assets/hero-5.png">
+
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -81,7 +87,7 @@
                   <div class="hero-slide__cols">
                     <div class="hero-slide__col hero-slide__col--up">
                       <div class="hero-slide__col-track">
-                        <img src="assets/hero-1.png" width="400" height="860" alt="A student smiling on campus" loading="eager">
+                        <img src="assets/hero-1.png" width="400" height="860" alt="A student smiling on campus" loading="eager" fetchpriority="high" decoding="async">
                         <img src="assets/hero-2.png" width="400" height="860" alt="Students walking together" loading="lazy">
                         <img src="assets/hero-1.png" width="400" height="860" alt="" aria-hidden="true" loading="lazy">
                         <img src="assets/hero-2.png" width="400" height="860" alt="" aria-hidden="true" loading="lazy">
@@ -89,7 +95,7 @@
                     </div>
                     <div class="hero-slide__col hero-slide__col--down">
                       <div class="hero-slide__col-track">
-                        <img src="assets/hero-3.png" width="400" height="860" alt="A student reading a book" loading="lazy">
+                        <img src="assets/hero-3.png" width="400" height="860" alt="A student reading a book" loading="eager" fetchpriority="high" decoding="async">
                         <img src="assets/hero-4.png" width="400" height="860" alt="A student playing sport" loading="lazy">
                         <img src="assets/hero-3.png" width="400" height="860" alt="" aria-hidden="true" loading="lazy">
                         <img src="assets/hero-4.png" width="400" height="860" alt="" aria-hidden="true" loading="lazy">
@@ -97,7 +103,7 @@
                     </div>
                     <div class="hero-slide__col hero-slide__col--up">
                       <div class="hero-slide__col-track">
-                        <img src="assets/hero-5.png" width="400" height="860" alt="A student in a science lab" loading="lazy">
+                        <img src="assets/hero-5.png" width="400" height="860" alt="A student in a science lab" loading="eager" fetchpriority="high" decoding="async">
                         <img src="assets/hero-6.png" width="400" height="860" alt="A student cycling outdoors" loading="lazy">
                         <img src="assets/hero-5.png" width="400" height="860" alt="" aria-hidden="true" loading="lazy">
                         <img src="assets/hero-6.png" width="400" height="860" alt="" aria-hidden="true" loading="lazy">
@@ -118,7 +124,7 @@
                     </div>
                     <div class="hero-slide__col hero-slide__col--up">
                       <div class="hero-slide__col-track">
-                        <img src="assets/hero-9.png" width="400" height="860" alt="A student at a music lesson" loading="lazy">
+                        <img src="assets/hero-6.png" width="400" height="860" alt="A student at a music lesson" loading="lazy">
                         <img src="assets/hero-1.png" width="400" height="860" alt="A student with a backpack" loading="lazy">
                         <img src="assets/hero-5.png" width="400" height="860" alt="" aria-hidden="true" loading="lazy">
                         <img src="assets/hero-4.png" width="400" height="860" alt="" aria-hidden="true" loading="lazy">
@@ -141,8 +147,8 @@
                       <div class="hero-slide__col-track">
                         <img src="assets/hero-2.png" width="400" height="860" alt="A student on a field trip" loading="lazy">
                         <img src="assets/hero-4.png" width="400" height="860" alt="A student on the sports field" loading="lazy">
-                        <img src="assets/hero-2.svg" width="400" height="860" alt="" aria-hidden="true" loading="lazy">
-                        <img src="assets/hero-4.svg" width="400" height="860" alt="" aria-hidden="true" loading="lazy">
+                        <img src="assets/hero-2.png" width="400" height="860" alt="" aria-hidden="true" loading="lazy">
+                        <img src="assets/hero-4.png" width="400" height="860" alt="" aria-hidden="true" loading="lazy">
                       </div>
                     </div>
                     <div class="hero-slide__col hero-slide__col--down">
@@ -427,7 +433,7 @@
           <img class="footer__icon" src="assets/location.png" alt="" aria-hidden="true">
           <p class="footer__heading">Corporate Office:</p>
         </div>
-        <p class="footer__text">Suite B-5, Ballygunge Park Tower,<br>67B Ballygunge Circular Road,<br>Kolkata - 700019</p>
+        <p class="footer__text">Suite B-5, Ballygunge Park Tower,<br class="brtag">67B Ballygunge Circular Road,<br class="brtag">Kolkata - 700019</p>
       </address>
 
       <address class="footer__col">
@@ -435,7 +441,7 @@
           <img class="footer__icon" src="assets/location.png" alt="" aria-hidden="true">
           <p class="footer__heading">Ahmedabad Office:</p>
         </div>
-        <p class="footer__text">12/AA, Swastik Chambers, Near CU<br>Shah College, Ashram Road,<br>Ahmedabad - 380009</p>
+        <p class="footer__text">12/AA, Swastik Chambers, Near CU<br class="brtag">Shah College, Ashram Road,<br class="brtag">Ahmedabad - 380009</p>
       </address>
 
       <div class="footer__col">

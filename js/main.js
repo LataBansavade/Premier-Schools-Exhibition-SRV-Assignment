@@ -237,6 +237,7 @@
       var w = window.innerWidth;
       if (w <= 620) return 1;
       if (w <= 860) return 2;
+      if (w <= 1120) return 3;
       return 4;
     }
     function maxIndex() { return Math.max(0, total - perView()); }

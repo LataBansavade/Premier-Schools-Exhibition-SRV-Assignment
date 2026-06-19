@@ -36,6 +36,7 @@ body {
   color: var(--c-ink);
   background: var(--c-white);
   line-height: 1.55;
+  overflow-x: hidden;            /* kill any sideways scroll so full-width sections fill the viewport */
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -855,21 +856,30 @@ button { font: inherit; cursor: pointer; }
 }
 
 /* Large tablets / small desktop */
-@media (max-width: 1080px) {
+/* Hero reflows to 2 columns early — the 3-col layout gets cramped below ~1350px */
+@media (max-width: 1390px) {
   .hero__inner { grid-template-columns: 1fr 1fr; max-height: none; }
-  .hero__media { order: 3; grid-column: 1 / -1; }   /* scroll animation drops below the form */
+  .hero__media { order: 3; grid-column: 1 / -1; margin-top: 40px; }   /* scroll animation drops below the form, spaced from it */
   .hero__form-wrap { justify-content: flex-start; }
+  .enquiry { max-width: 420px; margin-top: 40px;}   /* keep the card a fixed width even in the wider 2-col layout */
   .hero-slide__cols { height: clamp(320px, 50vw, 460px); }
+}
+
+@media (max-width: 1120px) {
+  /* Exhibition cards: 3 per view — keeps titles from wrapping too tightly */
+  .card-highlight { flex-basis: 33.3333%; }
 }
 
 @media (max-width: 1200px) {
   .hero { padding-top: 64px; }
 }
 /* Tablets */
-@media (max-width: 860px) {
+@media (max-width: 900px) {
   /* hero: single column — intro, form, then the scroll animation */
   .hero__inner { grid-template-columns: 1fr; }
-.hero { padding-top: 52px; }
+  /* form now sits below the intro — let it span the full hero width */
+  .hero__form-wrap, .enquiry { max-width: 100%; width: 100%; }
+.hero { padding-top: 55px; }
   .stats__list { max-width: 100%; grid-template-columns: repeat(2, 1fr); gap: 28px 16px; }
   .stats__item { min-height: 150px; }
 
@@ -923,7 +933,7 @@ button { font: inherit; cursor: pointer; }
   .footer__inner { grid-template-columns: 1fr 1fr; }
   .footer__brand { grid-column: 1 / -1; }
 }
-@media (max-width: 1080px){
+@media (max-width: 1120px){
    .footer__inner { grid-template-columns: 1fr 1fr; }
   .footer__brand { grid-column: 1 / -1; }
 }
@@ -934,8 +944,13 @@ button { font: inherit; cursor: pointer; }
   .stats__item { min-height: 100px; background-size: 60% auto; }
 }
 
-@media (max-width: 400px) {
-  .footer__inner { grid-template-columns: 1fr; }
+@media (max-width: 490px) {
+  .footer__inner { grid-template-columns: 1fr; justify-items: stretch; }
+  .footer__inner > * { width: 100%; }
+  .footer__brand { grid-column: 1 / -1; }
+  /* drop the left indent so the text spans full width on small screens */
+  .brtag { display: none; }
+  
 }
 
 /* Header: shrink logo + register button on small screens */
