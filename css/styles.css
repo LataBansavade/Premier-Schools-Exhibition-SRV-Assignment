@@ -399,11 +399,7 @@ button { font: inherit; cursor: pointer; }
 
 /* hero auto-plays horizontally; manual controls stay for accessibility */
 .carousel--hero .carousel__footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin-top: 16px;
+  display: none;
 }
 
 .carousel__footer {
